@@ -1,0 +1,4 @@
+const SET_USER = 'SET_USER';
+const SET_USER_NULL = 'SET_USER_NULL';
+
+export { SET_USER, SET_USER_NULL };

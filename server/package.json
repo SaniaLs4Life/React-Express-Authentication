@@ -1,0 +1,32 @@
+{
+  "name": "Express-MongoDB-Typescript-Boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SaniaLs4Life/Express-MongoDB-Typescript-Boilerplate",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "^16.1.8",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.3",
+    "morgan": "^1.9.1",
+    "typescript": "^3.7.4"
+  },
+  "scripts": {
+    "start": "concurrently \"tsc -w\" \"nodemon dist/index.js\""
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "@types/hapi__joi": "^16.0.5",
+    "@types/jsonwebtoken": "^8.3.5",
+    "@types/mongoose": "^5.5.36",
+    "@types/morgan": "^1.7.37",
+    "concurrently": "^5.0.2",
+    "nodemon": "^2.0.2"
+  }
+}
