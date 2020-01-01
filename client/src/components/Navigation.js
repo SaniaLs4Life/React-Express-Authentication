@@ -29,14 +29,9 @@ export default function Navigation() {
         <Nav>
           <Link to="/">
             <Nav.Item componentClass="span" icon={<Icon icon="home" />}>
-              Home
+              Dashboard
             </Nav.Item>
           </Link>
-          <Dropdown title="About">
-            <Dropdown.Item>Company</Dropdown.Item>
-            <Dropdown.Item>Team</Dropdown.Item>
-            <Dropdown.Item>Contact</Dropdown.Item>
-          </Dropdown>
         </Nav>
         <Nav pullRight>
           {isAuthenticated ? (
@@ -46,11 +41,18 @@ export default function Navigation() {
               </Nav.Item>
             </div>
           ) : (
-            <Link to="/signup">
-              <Nav.Item componentClass="span" icon={<Icon icon="sign-in" />}>
-                Sign in
-              </Nav.Item>
-            </Link>
+            <>
+              <Link to="/signup">
+                <Nav.Item componentClass="span" icon={<Icon icon="save" />}>
+                  Sign up
+                </Nav.Item>
+              </Link>
+              <Link to="/signin">
+                <Nav.Item componentClass="span" icon={<Icon icon="sign-in" />}>
+                  Sign in
+                </Nav.Item>
+              </Link>
+            </>
           )}
         </Nav>
       </Navbar.Body>

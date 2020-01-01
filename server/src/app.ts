@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import authRoutes from './routes/auth';
+import userRoutes from './routes/user';
 
 const app: Application = express();
 
@@ -15,5 +16,6 @@ app.use(cors({credentials: true, origin: true}));
 
 //ROUTES
 app.use('/auth', authRoutes);
+app.use('/', userRoutes);
 
 export default app;

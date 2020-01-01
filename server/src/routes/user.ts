@@ -1,12 +1,8 @@
 import { Router } from 'express';
-import { signUp, signIn, profile } from '../controllers/auth.controller';
 import { getUsers } from './../controllers/user.controller';
 import { TokenValidation } from '../utils/verifyToken';
 
 const router: Router = Router();
-
-router.post('/signup', signUp);
-router.post('/signin', signIn);
-router.get('/profile', TokenValidation, profile);
+router.get('/users', getUsers);
 
 export default router;

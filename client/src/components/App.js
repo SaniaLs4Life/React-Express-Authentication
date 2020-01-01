@@ -8,7 +8,7 @@ import {
 import Dashboard from './Dashboard';
 import SignUp from './SignUp';
 import Navigation from './Navigation';
-import ProtectedRoute from '../AuthRoute/ProtectedRoute';
+import ProtectedRoute from '../Auth/ProtectedRoute';
 import SignIn from './SignIn';
 
 export default function App() {

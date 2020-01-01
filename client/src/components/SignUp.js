@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { AuthService } from '../services/index';
@@ -17,7 +17,7 @@ import {
   Icon,
   Notification
 } from 'rsuite';
-import './SignUp.scss';
+import './Form.scss';
 import { loginAction } from '../store/actions';
 
 const validationSchema = Yup.object().shape({
@@ -35,6 +35,10 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function SignUp({ history }) {
+  const token = localStorage.getItem('token');
+  useEffect(() => {
+    if (token) history.push('/');
+  }, [token]);
   const dispatch = useDispatch();
   const {
     handleSubmit,
@@ -47,7 +51,7 @@ export default function SignUp({ history }) {
     resetForm
   } = useFormik({
     initialValues: {
-    fullname: '',
+      fullname: '',
       email: '',
       password: ''
     },
@@ -76,7 +80,7 @@ export default function SignUp({ history }) {
   };
 
   return (
-    <div className="signup-page">
+    <div className="form-container">
       <Container>
         <Content>
           <FlexboxGrid justify="center">
